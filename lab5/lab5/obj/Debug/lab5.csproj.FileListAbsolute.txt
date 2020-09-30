@@ -1,0 +1,5 @@
+C:\Users\jda_1\Source\Repos\CECS-475-Lab-5\lab5\lab5\obj\Debug\lab5.csprojAssemblyReference.cache
+C:\Users\jda_1\Source\Repos\CECS-475-Lab-5\lab5\lab5\obj\Debug\Views\AppWindow.g.cs
+C:\Users\jda_1\Source\Repos\CECS-475-Lab-5\lab5\lab5\obj\Debug\Views\ChangeWindow.g.cs
+C:\Users\jda_1\Source\Repos\CECS-475-Lab-5\lab5\lab5\obj\Debug\lab5_MarkupCompile.cache
+C:\Users\jda_1\Source\Repos\CECS-475-Lab-5\lab5\lab5\obj\Debug\lab5_MarkupCompile.lref

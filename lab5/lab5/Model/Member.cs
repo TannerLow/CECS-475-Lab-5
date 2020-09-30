@@ -36,6 +36,30 @@ namespace lab5.Model
         }
 
         /// <summary>
+        ///  A property that gets or sets the member's first name, and makes sure it's not too long.
+        /// </summary>
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
+            set
+            {
+                if (value.Length > TEXT_LIMIT)
+                {
+                    throw new ArgumentException("Too long");
+                }
+                if (value.Length == 0)
+                {
+                    throw new NullReferenceException();
+                }
+                firstName = value;
+            }
+
+        }
+
+        /// <summary>
         /// A property that gets or sets the member's last name, and makes sure it's not too long.
         /// </summary>
         /// <returns>The member's last name.</returns>
@@ -89,6 +113,9 @@ namespace lab5.Model
         /// Text to be displayed in the list box.
         /// </summary>
         /// <returns>A concatenation of the member's first name, last name, and email.</returns>
-
+        public string DisplayEntry()
+        {
+            return firstName + " " + lastName + ", " + email;
+        }
     }
 }
