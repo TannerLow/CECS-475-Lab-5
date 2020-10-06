@@ -92,10 +92,39 @@ namespace lab5.ViewModel
             set
             {
                 enteredPId = value;
-                RaisePropertyChanged("EnteredFName");
+                RaisePropertyChanged("EnteredPId");
             }
         }
         /// <summary>
+        /// The currently entered first name in the add window.
+        /// </summary>
+        public string EnteredPName
+        {
+            get
+            {
+                return enteredPName;
+            }
+            set
+            {
+                enteredPName = value;
+                RaisePropertyChanged("EnteredPName");
+            }
+        }
+        /// <summary>
+        /// The currently entered first name in the add window.
+        /// </summary>
+        public int EnteredAmount
+        {
+            get
+            {
+                return enteredAmount;
+            }
+            set
+            {
+                enteredAmount = value;
+                RaisePropertyChanged("EnteredAmount");
+            }
+        }
 
     }
 }
