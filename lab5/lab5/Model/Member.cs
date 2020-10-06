@@ -15,8 +15,9 @@ namespace lab5.Model
         /// <summary>
         /// The member's first name.
         /// </summary>
-        private string firstName, lastName, email;
-        private const int TEXT_LIMIT = 50;
+        private string productId, productName;
+        private int quantity;
+        private const int TEXT_LIMIT = 10;
         
         /// <summary>
         /// The member's last name.
@@ -28,21 +29,21 @@ namespace lab5.Model
         /// <param name="fName">The member's first name.</param>
         /// <param name="lName">The member's last name.</param>
         /// <param name="mail">The member's e-mail.</param>
-        public Member(string fName, string lName, string mail)
+        public Member(string pId, string pName, int amount)
         {
-            firstName = fName;
-            lastName = lName;
-            email = mail;
+            productId = pId;
+            productName = pName;
+            quantity = amount;
         }
 
         /// <summary>
         ///  A property that gets or sets the member's first name, and makes sure it's not too long.
         /// </summary>
-        public string FirstName
+        public string ProductId
         {
             get
             {
-                return firstName;
+                return productId;
             }
             set
             {
@@ -54,7 +55,14 @@ namespace lab5.Model
                 {
                     throw new NullReferenceException();
                 }
-                firstName = value;
+                foreach(char c in value)
+                {
+                    if(c < '0' || c > '9')
+                    {
+                        throw new FormatException("Must be numeric");
+                    }
+                }
+                productId = value;
             }
 
         }
@@ -63,11 +71,11 @@ namespace lab5.Model
         /// A property that gets or sets the member's last name, and makes sure it's not too long.
         /// </summary>
         /// <returns>The member's last name.</returns>
-        public string LastName
+        public string ProductName
         {
             get
             {
-                return lastName;
+                return productName;
             }
             set
             {
@@ -79,43 +87,35 @@ namespace lab5.Model
                 {
                     throw new NullReferenceException();
                 }
-                lastName = value;
+                productName = value;
             }
         }
          /// <summary>
          /// A property that gets or sets the member's e-mail, and makes sure it's not too long.
          /// </summary>
          /// <returns>The member's e-mail.</returns>
-         public string Email
+         public int Quantity
          {
             get
             {
-                return email;
+                return quantity;
             }
             set
             {
-                if (value.Length > TEXT_LIMIT)
+                if (value < 6 || value > 99)
                 {
-                    throw new ArgumentException("Too long");
+                    throw new ArgumentException("Invalid Number");
                 }
-                if (value.Length == 0)
-                {
-                    throw new NullReferenceException();
-                }
-                if (value.IndexOf("@") == -1 || value.IndexOf(".") == -1)
-                {
-                    throw new FormatException();
-                }
-                email = value;
+                quantity = value;
             }
          }
-        /// <summary>
-        /// Text to be displayed in the list box.
-        /// </summary>
-        /// <returns>A concatenation of the member's first name, last name, and email.</returns>
-        public string DisplayEntry()
-        {
-            return firstName + " " + lastName + ", " + email;
-        }
+         /// <summary>
+         /// Text to be displayed in the list box.
+         /// </summary>
+         /// <returns>A concatenation of the member's first name, last name, and email.</returns>
+         public string DisplayEntry()
+         {
+            return productId + ", " + productName + ", " + quantity;
+         }
     }
 }

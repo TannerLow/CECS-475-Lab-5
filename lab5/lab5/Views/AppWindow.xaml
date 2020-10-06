@@ -1,13 +1,13 @@
-﻿<Window x:Class="GymMembers.View.AddWindow"
+﻿<Window x:Class="lab5.View.AddWindow"
  Name="addWindow"
  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- xmlns:local="clr-namespace:GymMembers.View"
+ xmlns:local="clr-namespace:lab5.View"
  mc:Ignorable="d"
  DataContext="{Binding Source={StaticResource Locator}, Path=___________________}"
- Title="Add Membership" Height="237" Width="300">
+ Title="Add Product" Height="237" Width="300">
     <Grid Background="#FFECEAEA">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -20,11 +20,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Label x:Name="label" Content="First Name:" HorizontalAlignment="Center"
+        <Label x:Name="label" Content="Product ID:" HorizontalAlignment="Center"
 VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
-        <Label x:Name="label1" Content="Last Name:" HorizontalAlignment="Center"
+        <Label x:Name="label1" Content="Product Name:" HorizontalAlignment="Center"
 VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
-        <Label x:Name="label2" Content="E-mail:" HorizontalAlignment="Center"
+        <Label x:Name="label2" Content="Quantity:" HorizontalAlignment="Center"
 VerticalAlignment="Center" Grid.Row="3" Grid.Column="0"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="23"
 TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding ___________}" Width="120"

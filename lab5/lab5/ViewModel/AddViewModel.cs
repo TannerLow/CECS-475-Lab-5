@@ -17,22 +17,22 @@ namespace lab5.ViewModel
         /// <summary>
         /// The currently entered first name in the add window.
         /// </summary>
-        private string enteredFName;
+        private string enteredPId;
         /// <summary>
         /// The currently entered last name in the add window.
         /// </summary>
-        private string enteredLName;
+        private string enteredPName;
         /// <summary>
         /// The currently entered email in the add window.
         /// </summary>
-        private string enteredEmail;
+        private int enteredAmount;
         /// <summary>
         /// Initializes a new instance of the AddViewModel class.
         /// </summary>
         public AddViewModel()
         {
             SaveCommand = new RelayCommand<IClosable>(SaveMethod);
-            __________________________________________________
+            CancelCommand = new RelayCommand<IClosable>(CancelMethod);
         }
         /// <summary>
         /// The command that triggers saving the filled out member data.
@@ -43,17 +43,16 @@ namespace lab5.ViewModel
         /// </summary>
         public ICommand CancelCommand { get; private set; }
         /// <summary>
-        /// Sends a valid member to the Main VM to add to the list, then closes the
-        window.
- /// </summary>
- /// <param name="window">The window to close.</param>
- public void SaveMethod(IClosable window)
+        /// Sends a valid member to the Main VM to add to the list, then closes the window.
+        /// </summary>
+        /// <param name="window">The window to close.</param>
+        public void SaveMethod(IClosable window)
         {
             try
             {
                 if (window != null)
                 {
-                    Messenger.Default.Send(_______________________________________));
+                    Messenger.Default.Send("SaveMethod AddViewModel.cs");//NOT SURE ABOUT THIS, WAS AN UNDERLINE
                     window.Close();
                 }
             }
@@ -84,15 +83,15 @@ namespace lab5.ViewModel
         /// <summary>
         /// The currently entered first name in the add window.
         /// </summary>
-        public string EnteredFName
+        public string EnteredPId
         {
             get
             {
-                return enteredFName;
+                return enteredPId;
             }
             set
             {
-                enteredFName = value;
+                enteredPId = value;
                 RaisePropertyChanged("EnteredFName");
             }
         }

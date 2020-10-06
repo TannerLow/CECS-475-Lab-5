@@ -17,8 +17,8 @@ namespace lab5.Model
         /// <param name="lName">The member's last name.</param>
         /// <param name="mail">The member's e-mail.</param>
         /// <param name="message">The extra description</param>
-        public MessageMember(string fName, string lName, string mail, string message) :
-            base(fName, lName, mail)
+        public MessageMember(string pId, string pName, int amount, string message) :
+            base(pId, pName, amount)
         {
             Message = message;
         }

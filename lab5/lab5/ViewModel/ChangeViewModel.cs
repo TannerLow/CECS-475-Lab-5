@@ -32,7 +32,7 @@ namespace lab5.ViewModel
         public ChangeViewModel()
         {
             _____________________________________
-        Messenger.Default.Register<Member>(this, ___________________ -);
+             Messenger.Default.Register<Member>(this, GetSelected);//NOT SURE ABOUT THIS, WAS UNDERLINE
         }
         /// <summary>
         /// The command that triggers saving the filled out member data.
@@ -44,24 +44,24 @@ namespace lab5.ViewModel
         public ICommand DeleteCommand { get; private set; }
         /// <summary>
         /// Sends a valid member to the main VM to replace at the selected index with, then closes the change window.
- /// </summary>
- /// <param name="window">The window to close.</param>
- public void UpdateMethod(IClosable window)
+        /// </summary>
+        /// <param name="window">The window to close.</param>
+        public void UpdateMethod(IClosable window)
         {
             try
             {
-                Messenger.Default.Send(_________________________________________ -));
+                Messenger.Default.Send("UpdateMethod ChangeViewMode.cs");//NOT SURE ABOUT THIS, WAS UNDERLINED
                 window.Close();
             }
             catch (ArgumentException)
             {
                 MessageBox.Show("Fields must be under 25 characters.", "Entry Error");
             }
-            catch (__________________________n)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Fields cannot be empty.", "Entry Error");
             }
-            catch (______________________n)
+            catch (FormatException)
             {
                 MessageBox.Show("Must be a valid e-mail address.", "Entry Error");
             }
@@ -80,12 +80,12 @@ namespace lab5.ViewModel
         }
         /// <summary>
         /// Receives a member from the main VM to auto-fill the change box with the currently selected member.
- /// </summary>
- /// <param name="m">The member data to fill in.</param>
- public void GetSelected(Member m)
+        /// </summary>
+        /// <param name="m">The member data to fill in.</param>
+        public void GetSelected(Member m)
         {
             ___________________________
- }
+        }
         /// <summary>
         /// The currently entered first name in the change window.
         /// </summary>

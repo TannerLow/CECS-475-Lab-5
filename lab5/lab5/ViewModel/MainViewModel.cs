@@ -115,12 +115,12 @@ namespace lab5.ViewModel
         /// /// Gets text messages.
         /// </summary>
         /// <param name="msg">The received message. "Delete" means the currently selected member is deleted.</param>
- public void ReceiveMessage(NotificationMessage msg)
+        public void ReceiveMessage(NotificationMessage msg)
         {
             if (msg.Notification == "Delete")
             {
                 _______________________________________________
-            database.SaveMemberships();
+                database.SaveMemberships();
             }
         }
         /// <summary>

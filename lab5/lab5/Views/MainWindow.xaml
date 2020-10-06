@@ -1,15 +1,15 @@
-﻿<Window x:Class="GymMembers.View.MainWindow"
+﻿<Window x:Class="lab5.View.MainWindow"
  Name="mainWindow"
  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- xmlns:vm="clr-namespace:GymMembers.ViewModel"
- xmlns:local="clr-namespace:GymMembers"
+ xmlns:vm="clr-namespace:lab5.ViewModel"
+ xmlns:local="clr-namespace:lab5"
  xmlns:i="clrnamespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
  mc:Ignorable="d"
  DataContext="{Binding Source={StaticResource Locator}, Path=_________________}"
- Title="Gym Memberships" Height="350" Width="525">
+ Title="Inventory Control System" Height="350" Width="525">
     <Grid Background="#FFECEAEA">
         <Grid.Resources>
             <CollectionViewSource x:Key="SortedItems" Source="{Binding MemberList}" >

@@ -1,5 +1,8 @@
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
+using System.Windows;
+
 namespace lab5.ViewModel
 {
     /// <summary>
@@ -15,18 +18,24 @@ namespace lab5.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<MainViewModel>();
-            ____________________________________
+            //____________________________________ IDK JUST COPYING WPF APPLICATION 1
+            Messenger.Default.Register<NotificationMessage>(this, NotifyUserMethod);
         }
- /// <summary>
- /// A property that lets the main window connect with its View Model.
- /// </summary>
+        /// <summary>
+        /// A property that lets the main window connect with its View Model.
+        /// </summary>
         public MainViewModel Main
         {
             get
-        {
+            {
             return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
         }
-    }
+
+        private void NotifyUserMethod(NotificationMessage message)
+        {
+            MessageBox.Show(message.Notification);
+        }
 
     }
 }
