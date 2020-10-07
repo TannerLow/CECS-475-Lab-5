@@ -18,15 +18,15 @@ namespace lab5.ViewModel
         /// <summary>
         /// The currently entered first name in the change window.
         /// </summary>
-        private string productId;
+        private string enteredPId;
         /// <summary>
         /// The currently entered last name in the change window.
         /// </summary>
-        private string productName;
+        private string enteredPName;
         /// <summary>
         /// The currently entered email in the change window.
         /// </summary>
-        private int quantity;
+        private int enteredAmount;
         /// <summary>
         /// Initializes a new instance of the ChangeViewModel class.
         /// </summary>
@@ -52,7 +52,7 @@ namespace lab5.ViewModel
         {
             try
             {
-                Messenger.Default.Send(new MessageMember(ProductId, ProductName, Quantity, "update"));//NOT SURE ABOUT THIS, WAS UNDERLINED
+                Messenger.Default.Send(new MessageMember(EnteredPId, EnteredPName, EnteredAmount, "Update"));//NOT SURE ABOUT THIS, WAS UNDERLINED
                 window.Close();
             }
             catch (ArgumentException)
@@ -86,22 +86,22 @@ namespace lab5.ViewModel
         /// <param name="m">The member data to fill in.</param>
         public void GetSelected(Member m)
         {
-            productId = m.ProductId;
-            productName = m.ProductName;
-            quantity = m.Quantity;
+            EnteredPId = m.ProductId;
+            EnteredPName = m.ProductName;
+            EnteredAmount = m.Quantity;
         }
         /// <summary>
         /// The currently entered first name in the change window.
         /// </summary>
-        public string ProductId
+        public string EnteredPId
         {
             get
             {
-                return productId;
+                return enteredPId;
             }
             set
             {
-                ProductId = value;
+                enteredPId = value;
                 RaisePropertyChanged("ProductID");
             }
         }
@@ -109,15 +109,15 @@ namespace lab5.ViewModel
         /// <summary>
         /// The currently entered product name in the change window
         /// </summary>
-        public string ProductName
+        public string EnteredPName
         {
             get
             {
-                return productName;
+                return enteredPName;
             }
             set
             {
-                ProductName = value;
+                enteredPName = value;
                 RaisePropertyChanged("ProductName");
             }
         }
@@ -126,16 +126,16 @@ namespace lab5.ViewModel
         /// <summary>
         /// The currently entered product quantity in the change window
         /// </summary>
-        public int Quantity
+        public int EnteredAmount
         {
             get
             {
-                return quantity;
+                return enteredAmount;
             }
             set
             {
-                quantity = value;
-                RaisePropertyChanged("Quantity");
+                enteredAmount = value;
+                RaisePropertyChanged("Amount");
             }
         }
     }
