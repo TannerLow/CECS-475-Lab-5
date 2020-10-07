@@ -22,7 +22,7 @@ namespace lab5.ViewModel
             SimpleIoc.Default.Register<AddViewModel>();
             SimpleIoc.Default.Register<ChangeViewModel>();
 
-            Messenger.Default.Register<NotificationMessage>(this, NotifyUserMethod); //  IDK JUST COPYING WPF APPLICATION 1
+           // Messenger.Default.Register<NotificationMessage>(this, NotifyUserMethod); //  IDK JUST COPYING WPF APPLICATION 1
         }
         /// <summary>
         /// A property that lets the main window connect with its View Model.
