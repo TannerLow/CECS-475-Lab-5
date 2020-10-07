@@ -52,7 +52,7 @@ namespace lab5.ViewModel
         {
             try
             {
-                Messenger.Default.Send(new MessageMember(EnteredPId, EnteredPName, EnteredAmount, "update"));//NOT SURE ABOUT THIS, WAS UNDERLINED
+                Messenger.Default.Send(new MessageMember(EnteredPId, EnteredPName, EnteredAmount, "Update"));//NOT SURE ABOUT THIS, WAS UNDERLINED
                 window.Close();
             }
             catch (ArgumentException)
@@ -86,9 +86,9 @@ namespace lab5.ViewModel
         /// <param name="m">The member data to fill in.</param>
         public void GetSelected(Member m)
         {
-            enteredPId = m.ProductId;
-            enteredPName = m.ProductName;
-            enteredAmount = m.Quantity;
+            EnteredPId = m.ProductId;
+            EnteredPName = m.ProductName;
+            EnteredAmount = m.Quantity;
         }
         /// <summary>
         /// The currently entered first name in the change window.

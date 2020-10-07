@@ -93,7 +93,7 @@ namespace lab5.ViewModel
             {
                 ChangeWindow change = new ChangeWindow();
                 change.Show();
-                Messenger.Default.Send<NotificationMessage>(new NotificationMessage("ChangeMethod MainViewModel.cs"));
+                Messenger.Default.Send(SelectedMember);
             }
         }
         /// <summary>

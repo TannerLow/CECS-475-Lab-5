@@ -40,6 +40,14 @@ namespace lab5.Model
             {
                 StreamReader input = new StreamReader(new FileStream(filepath,
                 FileMode.OpenOrCreate, FileAccess.Read));
+                string[] delimiter = { "#" };
+
+                while(input.Peek() != -1)
+                {
+                    string line = input.ReadLine();
+                    string[] entry = line.Split(delimiter, System.StringSplitOptions.RemoveEmptyEntries);
+                    members.Add(new Member(entry[0], entry[1], Int32.Parse(entry[2])));
+                }
                 input.Close();
             }
             catch (FileNotFoundException)
@@ -59,7 +67,13 @@ namespace lab5.Model
         {
             StreamWriter output = new StreamWriter(new FileStream(filepath,
            FileMode.Create, FileAccess.Write));
-
+            foreach(Member m in members)
+            {
+                output.Write(m.ProductId + "#");
+                output.Write(m.ProductName + "#");
+                output.Write(m.Quantity + "#");
+                output.WriteLine();
+            }
             output.Close();
         }
     }
