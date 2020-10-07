@@ -52,7 +52,7 @@ namespace lab5.ViewModel
             {
                 if (window != null)
                 {
-                    Messenger.Default.Send<NotificationMessage>(new NotificationMessage("SaveMethod AddViewModel.cs"));//NOT SURE ABOUT THIS, WAS AN UNDERLINE
+                    Messenger.Default.Send(new MessageMember(EnteredPId, EnteredPName, EnteredAmount, "Add"));//NOT SURE ABOUT THIS, WAS AN UNDERLINE
                     window.Close();
                 }
             }
