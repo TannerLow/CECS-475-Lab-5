@@ -58,7 +58,7 @@ namespace lab5.Model
         public void SaveMemberships()
         {
             StreamWriter output = new StreamWriter(new FileStream(filepath,
-           FileMode.Create, FileAccess.Write));
+            FileMode.Create, FileAccess.Write));
 
             output.Close();
         }

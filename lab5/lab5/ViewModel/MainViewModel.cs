@@ -6,6 +6,7 @@ using lab5.Views;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -105,6 +106,7 @@ namespace lab5.ViewModel
         {
             if (m.Message == "Update")
             {
+                sort();
                 int index = MemberList.IndexOf(selectedMember);
                 MemberList[index] = new Member(m.ProductId, m.ProductName, m.Quantity);
                 database.SaveMemberships();
@@ -112,6 +114,7 @@ namespace lab5.ViewModel
             else if (m.Message == "Add")
             {
                 MemberList.Add(new Member(m.ProductId, m.ProductName, m.Quantity));
+                sort();
                 database.SaveMemberships();
             }
         }
@@ -123,6 +126,7 @@ namespace lab5.ViewModel
         {
             if (msg.Notification == "Delete")
             {
+                sort();
                 members.Remove(selectedMember);
                 database.SaveMemberships();
             }
@@ -133,6 +137,11 @@ namespace lab5.ViewModel
         public ObservableCollection<Member> MemberList
         {
             get { return members; }
+        }
+
+        public void sort()
+        {
+            //members = new ObservableCollection<Member>(members.OrderBy(m => m.ProductId));
         }
     }
 }
