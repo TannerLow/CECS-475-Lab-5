@@ -47,6 +47,8 @@ namespace lab5.ViewModel
         /// The command that triggers adding a new member.
         /// </summary>
         public ICommand AddCommand { get; private set; }
+        public ICommand ExitCommand { get; private set; }
+        public ICommand ChangeCommand { get; private set; }
 
         /// <summary>
         /// The currently selected member in the list box.
@@ -91,7 +93,7 @@ namespace lab5.ViewModel
             {
                 ChangeWindow change = new ChangeWindow();
                 change.Show();
-                Messenger.Default.Send(__________________________);
+                Messenger.Default.Send<NotificationMessage>(new NotificationMessage("ChangeMethod MainViewModel.cs"));
             }
         }
         /// <summary>
