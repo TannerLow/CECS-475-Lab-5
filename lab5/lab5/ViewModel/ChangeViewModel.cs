@@ -6,6 +6,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 namespace lab5.ViewModel
 {
@@ -17,15 +18,15 @@ namespace lab5.ViewModel
         /// <summary>
         /// The currently entered first name in the change window.
         /// </summary>
-        private string enteredPId;
+        private string productId;
         /// <summary>
         /// The currently entered last name in the change window.
         /// </summary>
-        private string enteredPName;
+        private string productName;
         /// <summary>
         /// The currently entered email in the change window.
         /// </summary>
-        private int enteredAmount;
+        private int quantity;
         /// <summary>
         /// Initializes a new instance of the ChangeViewModel class.
         /// </summary>
@@ -51,7 +52,7 @@ namespace lab5.ViewModel
         {
             try
             {
-                Messenger.Default.Send<NotificationMessage>(new NotificationMessage("UpdateMethod ChangeViewMode.cs"));//NOT SURE ABOUT THIS, WAS UNDERLINED
+                Messenger.Default.Send(new MessageMember(ProductId, ProductName, Quantity, "update"));//NOT SURE ABOUT THIS, WAS UNDERLINED
                 window.Close();
             }
             catch (ArgumentException)
@@ -85,53 +86,56 @@ namespace lab5.ViewModel
         /// <param name="m">The member data to fill in.</param>
         public void GetSelected(Member m)
         {
-            EnteredPId = m.ProductId;
-            EnteredPName = m.ProductName;
-            EnteredAmount = m.Quantity;
+            productId = m.ProductId;
+            productName = m.ProductName;
+            quantity = m.Quantity;
         }
         /// <summary>
         /// The currently entered first name in the change window.
         /// </summary>
-        public string EnteredPId
+        public string ProductId
         {
             get
             {
-                return enteredPId;
+                return productId;
             }
             set
             {
-                enteredPId = value;
-                RaisePropertyChanged("EnteredPId");
+                ProductId = value;
+                RaisePropertyChanged("ProductID");
             }
         }
+
         /// <summary>
-        /// The currently entered first name in the change window.
+        /// The currently entered product name in the change window
         /// </summary>
-        public string EnteredPName
+        public string ProductName
         {
             get
             {
-                return enteredPName;
+                return productName;
             }
             set
             {
-                enteredPName = value;
-                RaisePropertyChanged("EnteredPName");
+                ProductName = value;
+                RaisePropertyChanged("ProductName");
             }
         }
+
+        
         /// <summary>
-        /// The currently entered first name in the change window.
+        /// The currently entered product quantity in the change window
         /// </summary>
-        public int EnteredAmount
+        public int Quantity
         {
             get
             {
-                return enteredAmount;
+                return quantity;
             }
             set
             {
-                enteredAmount = value;
-                RaisePropertyChanged("EnteredAmount");
+                quantity = value;
+                RaisePropertyChanged("Quantity");
             }
         }
     }

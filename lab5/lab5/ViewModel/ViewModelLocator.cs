@@ -19,6 +19,9 @@ namespace lab5.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<MainViewModel>();
             //____________________________________ 
+            SimpleIoc.Default.Register<AddViewModel>();
+            SimpleIoc.Default.Register<ChangeViewModel>();
+
             Messenger.Default.Register<NotificationMessage>(this, NotifyUserMethod); //  IDK JUST COPYING WPF APPLICATION 1
         }
         /// <summary>
@@ -29,6 +32,29 @@ namespace lab5.ViewModel
             get
             {
             return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
+        }
+
+        /// <summary>
+        /// A property that lets the add view window connect with its view model
+        /// </summary>
+        public AddViewModel AddViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<AddViewModel>();
+            }
+        }
+
+        /// <summary>
+        /// A property that lets the change view window connect with its view model.
+        /// </summary>
+        /// <param name="message"></param>
+        public ChangeViewModel ChangeViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ChangeViewModel>();
             }
         }
 

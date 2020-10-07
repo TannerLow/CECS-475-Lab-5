@@ -105,14 +105,15 @@ namespace lab5.ViewModel
         {
             if (m.Message == "Update")
             {
-                MemberList.Remove(m);
+                int index = MemberList.IndexOf(selectedMember);
+                MemberList[index] = new Member(m.ProductId, m.ProductName, m.Quantity);
                 database.SaveMemberships();
             }
             else if (m.Message == "Add")
             {
-                MemberList.Add(m);
+                MemberList.Add(new Member(m.ProductId, m.ProductName, m.Quantity));
                 database.SaveMemberships();
-            } 
+            }
         }
         /// <summary>
         /// /// Gets text messages.
@@ -122,7 +123,7 @@ namespace lab5.ViewModel
         {
             if (msg.Notification == "Delete")
             {
-                ______________
+                members.Remove(selectedMember);
                 database.SaveMemberships();
             }
         }
