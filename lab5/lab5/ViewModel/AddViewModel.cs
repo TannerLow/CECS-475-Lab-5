@@ -54,6 +54,7 @@ namespace lab5.ViewModel
                 {
                     Console.WriteLine("HERE===");
                     Messenger.Default.Send<MessageMember>(new MessageMember(enteredPId, enteredPName, enteredAmount, "Add"));//NOT SURE ABOUT THIS, WAS AN UNDERLINE
+                    ClearFields();
                     window.Close();
                 }
             }
@@ -78,6 +79,7 @@ namespace lab5.ViewModel
         {
             if (window != null)
             {
+                ClearFields();
                 window.Close();
             }
         }
@@ -125,6 +127,13 @@ namespace lab5.ViewModel
                 enteredAmount = value;
                 RaisePropertyChanged("EnteredAmount");
             }
+        }
+
+        private void ClearFields()
+        {
+            EnteredPId = "";
+            EnteredPName =  "";
+            EnteredAmount = 0;        
         }
 
     }
