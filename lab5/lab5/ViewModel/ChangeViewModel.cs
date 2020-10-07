@@ -76,7 +76,7 @@ namespace lab5.ViewModel
         {
             if (window != null)
             {
-                Messenger.Default.Send<NotificationMessage>(new NotificationMessage("DeleteMethod ChangeViewModel.cs"));
+                Messenger.Default.Send<NotificationMessage>(new NotificationMessage("Delete"));
                 window.Close();
             }
         }
@@ -102,7 +102,7 @@ namespace lab5.ViewModel
             set
             {
                 enteredPId = value;
-                RaisePropertyChanged("ProductID");
+                RaisePropertyChanged("EnteredPId");
             }
         }
 
@@ -118,7 +118,7 @@ namespace lab5.ViewModel
             set
             {
                 enteredPName = value;
-                RaisePropertyChanged("ProductName");
+                RaisePropertyChanged("EnteredPName");
             }
         }
 
@@ -135,7 +135,7 @@ namespace lab5.ViewModel
             set
             {
                 enteredAmount = value;
-                RaisePropertyChanged("Amount");
+                RaisePropertyChanged("EnteredAmount");
             }
         }
     }
