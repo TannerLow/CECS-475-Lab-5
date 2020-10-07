@@ -31,9 +31,9 @@ namespace lab5.Model
         /// <param name="mail">The member's e-mail.</param>
         public Member(string pId, string pName, int amount)
         {
-            productId = pId;
-            productName = pName;
-            quantity = amount;
+            ProductId = pId;
+            ProductName = pName;
+            Quantity = amount;
         }
 
         /// <summary>
