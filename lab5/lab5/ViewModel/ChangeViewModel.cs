@@ -32,8 +32,8 @@ namespace lab5.ViewModel
         /// </summary>
         public ChangeViewModel()
         {
-            UpdateCommand = new RelayCommand<IClosable>(this.UpdateMethod);
-            DeleteCommand = new RelayCommand<IClosable>(this.DeleteMethod);
+            UpdateCommand = new RelayCommand<IClosable>(UpdateMethod);
+            DeleteCommand = new RelayCommand<IClosable>(DeleteMethod);
             Messenger.Default.Register<Member>(this, GetSelected);//NOT SURE ABOUT THIS, WAS UNDERLINE
         }
         /// <summary>
@@ -138,6 +138,5 @@ namespace lab5.ViewModel
                 RaisePropertyChanged("Amount");
             }
         }
-
     }
 }

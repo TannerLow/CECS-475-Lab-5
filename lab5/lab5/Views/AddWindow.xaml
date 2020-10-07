@@ -37,9 +37,9 @@
             Grid.Row="3" Grid.Column="1"/>
         <Button x:Name="button" Content="Save" HorizontalAlignment="Center"
             VerticalAlignment="Top" Command="{Binding SaveCommand}" CommandParameter="{Binding
-            ElementName=SaveMethod}" Width="75" Grid.Row="4" Grid.Column="0"/>
+            ElementName=addWindow}" Width="75" Grid.Row="4" Grid.Column="0"/>
         <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Center"
             VerticalAlignment="Top" Command="{Binding CancelCommand}" CommandParameter="{Binding
-            ElementName=CancelMethod}" Width="75" Grid.Row="4" Grid.Column="1"/>
+            ElementName=addWindow}" Width="75" Grid.Row="4" Grid.Column="1"/>
     </Grid>
 </Window>

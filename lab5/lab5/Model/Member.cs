@@ -113,9 +113,9 @@ namespace lab5.Model
          /// Text to be displayed in the list box.
          /// </summary>
          /// <returns>A concatenation of the member's first name, last name, and email.</returns>
-         public string DisplayEntry()
+         public override string ToString()
          {
-            return productId + ", " + productName + ", " + quantity;
+            return "ID: " + productId + ", " + "Name: " + productName + ", " + "Quantity: " + quantity;
          }
     }
 }

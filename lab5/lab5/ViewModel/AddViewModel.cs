@@ -52,7 +52,8 @@ namespace lab5.ViewModel
             {
                 if (window != null)
                 {
-                    Messenger.Default.Send(new MessageMember(EnteredPId, EnteredPName, EnteredAmount, "Add"));//NOT SURE ABOUT THIS, WAS AN UNDERLINE
+                    Console.WriteLine("HERE===");
+                    Messenger.Default.Send<MessageMember>(new MessageMember(enteredPId, enteredPName, enteredAmount, "Add"));//NOT SURE ABOUT THIS, WAS AN UNDERLINE
                     window.Close();
                 }
             }
