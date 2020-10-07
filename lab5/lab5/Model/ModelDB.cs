@@ -56,7 +56,7 @@ namespace lab5.Model
             }
             catch (FormatException)
             {
-                Console.WriteLine("Invalid e-mail address format.");
+                Console.WriteLine("Invalid product quantity.");
             }
             return members;
         }
