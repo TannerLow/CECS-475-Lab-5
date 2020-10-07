@@ -17,22 +17,23 @@ namespace lab5.ViewModel
         /// <summary>
         /// The currently entered first name in the change window.
         /// </summary>
-        private string enteredFName;
+        private string enteredPId;
         /// <summary>
         /// The currently entered last name in the change window.
         /// </summary>
-        private string enteredLName;
+        private string enteredPName;
         /// <summary>
         /// The currently entered email in the change window.
         /// </summary>
-        private string enteredEmail;
+        private int enteredAmount;
         /// <summary>
         /// Initializes a new instance of the ChangeViewModel class.
         /// </summary>
         public ChangeViewModel()
         {
-            _____________________________________
-             Messenger.Default.Register<Member>(this, GetSelected);//NOT SURE ABOUT THIS, WAS UNDERLINE
+            UpdateCommand = new RelayCommand<IClosable>(UpdateMethod);
+            DeleteCommand = new RelayCommand<IClosable>(DeleteMethod);
+            Messenger.Default.Register<Member>(this, GetSelected);//NOT SURE ABOUT THIS, WAS UNDERLINE
         }
         /// <summary>
         /// The command that triggers saving the filled out member data.
@@ -50,7 +51,7 @@ namespace lab5.ViewModel
         {
             try
             {
-                Messenger.Default.Send("UpdateMethod ChangeViewMode.cs");//NOT SURE ABOUT THIS, WAS UNDERLINED
+                Messenger.Default.Send<NotificationMessage>(new NotificationMessage("UpdateMethod ChangeViewMode.cs"));//NOT SURE ABOUT THIS, WAS UNDERLINED
                 window.Close();
             }
             catch (ArgumentException)
@@ -84,23 +85,54 @@ namespace lab5.ViewModel
         /// <param name="m">The member data to fill in.</param>
         public void GetSelected(Member m)
         {
-            ___________________________
+            EnteredPId = m.ProductId;
+            EnteredPName = m.ProductName;
+            EnteredAmount = m.Quantity;
         }
         /// <summary>
         /// The currently entered first name in the change window.
         /// </summary>
-        public string EnteredFName
+        public string EnteredPId
         {
             get
             {
-                return enteredFName;
+                return enteredPId;
             }
             set
             {
-                enteredFName = value;
-                RaisePropertyChanged("EnteredFName");
+                enteredPId = value;
+                RaisePropertyChanged("EnteredPId");
             }
         }
-
+        /// <summary>
+        /// The currently entered first name in the change window.
+        /// </summary>
+        public string EnteredPName
+        {
+            get
+            {
+                return enteredPName;
+            }
+            set
+            {
+                enteredPName = value;
+                RaisePropertyChanged("EnteredPName");
+            }
+        }
+        /// <summary>
+        /// The currently entered first name in the change window.
+        /// </summary>
+        public int EnteredAmount
+        {
+            get
+            {
+                return enteredAmount;
+            }
+            set
+            {
+                enteredAmount = value;
+                RaisePropertyChanged("EnteredAmount");
+            }
+        }
     }
 }

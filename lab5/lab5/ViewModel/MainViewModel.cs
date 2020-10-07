@@ -105,14 +105,14 @@ namespace lab5.ViewModel
         {
             if (m.Message == "Update")
             {
-                _____________________________________
-            database.SaveMemberships();
+                MemberList.Remove(m);
+                database.SaveMemberships();
             }
             else if (m.Message == "Add")
             {
-                ______________________________________
-            database.SaveMemberships();
-            }
+                MemberList.Add(m);
+                database.SaveMemberships();
+            } 
         }
         /// <summary>
         /// /// Gets text messages.
@@ -122,7 +122,7 @@ namespace lab5.ViewModel
         {
             if (msg.Notification == "Delete")
             {
-                _______________________________________________
+                ______________
                 database.SaveMemberships();
             }
         }
