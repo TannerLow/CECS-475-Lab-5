@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace lab5.Views
 {
     /// <summary>
-    /// Interaction logic for AppWindow.xaml
+    /// Interaction logic for AddWindow.xaml
     /// </summary>
     public partial class AddWindow : Window
     {

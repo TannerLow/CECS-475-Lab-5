@@ -63,5 +63,9 @@ namespace lab5.ViewModel
             MessageBox.Show(message.Notification);
         }
 
+        public static void Cleanup()
+        {
+
+        }
     }
 }

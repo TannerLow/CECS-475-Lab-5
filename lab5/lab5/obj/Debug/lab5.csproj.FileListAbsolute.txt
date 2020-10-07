@@ -10,3 +10,5 @@ C:\Users\Tanner\Documents\Github\CECS-475-Lab-5\lab5\lab5\obj\Debug\lab5_MarkupC
 C:\Users\Tanner\Documents\Github\CECS-475-Lab-5\lab5\lab5\obj\Debug\lab5_MarkupCompile.lref
 C:\Users\Tanner\Documents\Github\CECS-475-Lab-5\lab5\lab5\obj\Debug\Views\AddWindow.g.cs
 C:\Users\Tanner\Documents\Github\CECS-475-Lab-5\lab5\lab5\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Tanner\Documents\Github\CECS-475-Lab-5\lab5\lab5\obj\Debug\Views\App.g.cs
+C:\Users\Tanner\Documents\Github\CECS-475-Lab-5\lab5\lab5\obj\Debug\GeneratedInternalTypeHelper.g.cs
