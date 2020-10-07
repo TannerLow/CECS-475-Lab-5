@@ -57,17 +57,17 @@ namespace lab5.ViewModel
                     window.Close();
                 }
             }
-            catch (ArgumentException)
+            catch (ArgumentException e)
             {
-                MessageBox.Show("Fields must be under 25 characters.", "Entry Error");
+                MessageBox.Show(e.Message, "Entry Error");
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException e)
             {
-                MessageBox.Show("Fields cannot be empty.", "Entry Error");
+                MessageBox.Show(e.Message, "Entry Error");
             }
-            catch (FormatException)
+            catch (FormatException e)
             {
-                MessageBox.Show("Must be a valid e-mail address.", "Entry Error");
+                MessageBox.Show(e.Message, "Entry Error");
             }
         }
         /// <summary>

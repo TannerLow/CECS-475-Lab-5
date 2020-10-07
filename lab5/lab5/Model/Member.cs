@@ -49,19 +49,19 @@ namespace lab5.Model
             }
             set
             {
+                if (value == null || value.Length == 0)
+                {
+                    throw new NullReferenceException("ID cannot be empty");
+                }
                 if (value.Length > TEXT_LIMIT)
                 {
-                    throw new ArgumentException("Too long");
-                }
-                if (value.Length == 0)
-                {
-                    throw new NullReferenceException();
+                    throw new ArgumentException("ID too long");
                 }
                 foreach(char c in value)
                 {
                     if(c < '0' || c > '9')
                     {
-                        throw new FormatException("Must be numeric");
+                        throw new FormatException("ID must be numeric");
                     }
                 }
                 productId = value;
@@ -81,13 +81,13 @@ namespace lab5.Model
             }
             set
             {
+                if (value == null || value.Length == 0)
+                {
+                    throw new NullReferenceException("Name cannot be empty");
+                }
                 if (value.Length > TEXT_LIMIT)
                 {
-                    throw new ArgumentException("Too long");
-                }
-                if (value.Length == 0)
-                {
-                    throw new NullReferenceException();
+                    throw new ArgumentException("Name too long");
                 }
                 productName = value;
             }
@@ -106,7 +106,7 @@ namespace lab5.Model
             {
                 if (value < 6 || value > 99)
                 {
-                    throw new ArgumentException("Invalid Number");
+                    throw new ArgumentException("Invalid Quantity");
                 }
                 quantity = value;
             }
