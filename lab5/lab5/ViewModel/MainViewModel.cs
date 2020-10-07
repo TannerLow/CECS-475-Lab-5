@@ -9,6 +9,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
+
 namespace lab5.ViewModel
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace lab5.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            members =
-            database =
+            members = new ObservableCollection<Member>();
+            database = new MemberDB(members);
             members = database.GetMemberships();
-            AddCommand =
-            ExitCommand =
-            ChangeCommand =
+            AddCommand = new RelayCommand(AddMethod);
+            ExitCommand = new RelayCommand<IClosable>(ExitMethod);
+            ChangeCommand = new RelayCommand(ChangeMethod);
             Messenger.Default.Register<MessageMember>(this, ReceiveMember);
             Messenger.Default.Register<NotificationMessage>(this, ReceiveMessage);
         }
