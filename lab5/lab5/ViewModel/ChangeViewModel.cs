@@ -11,20 +11,20 @@ using System.Windows.Input;
 namespace lab5.ViewModel
 {
     /// <summary>
-    /// The VM for modifying or removing users.
+    /// The VM for modifying or removing products.
     /// </summary>
     public class ChangeViewModel : ViewModelBase
     {
         /// <summary>
-        /// The currently entered first name in the change window.
+        /// The currently entered product ID in the change window.
         /// </summary>
         private string enteredPId;
         /// <summary>
-        /// The currently entered last name in the change window.
+        /// The currently entered product name in the change window.
         /// </summary>
         private string enteredPName;
         /// <summary>
-        /// The currently entered email in the change window.
+        /// The currently entered amount in the change window.
         /// </summary>
         private int enteredAmount;
         /// <summary>
@@ -37,11 +37,11 @@ namespace lab5.ViewModel
             Messenger.Default.Register<Member>(this, GetSelected);//NOT SURE ABOUT THIS, WAS UNDERLINE
         }
         /// <summary>
-        /// The command that triggers saving the filled out member data.
+        /// The command that triggers saving the filled out product data.
         /// </summary>
         public ICommand UpdateCommand { get; private set; }
         /// <summary>
-        /// The command that triggers removing the previously selected user.
+        /// The command that triggers removing the previously selected product.
         /// </summary>
         public ICommand DeleteCommand { get; private set; }
         /// <summary>
@@ -91,7 +91,7 @@ namespace lab5.ViewModel
             EnteredAmount = m.Quantity;
         }
         /// <summary>
-        /// The currently entered first name in the change window.
+        /// The currently entered product ID in the change window.
         /// </summary>
         public string EnteredPId
         {

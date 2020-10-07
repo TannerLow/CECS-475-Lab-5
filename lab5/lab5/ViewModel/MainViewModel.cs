@@ -19,11 +19,11 @@ namespace lab5.ViewModel
     public class MainViewModel : ViewModelBase
     {
         /// <summary>
-        /// The list of registered members.
+        /// The list of registered member products.
         /// </summary>
         private ObservableCollection<Member> members;
         /// <summary>
-        /// The currently selected member.
+        /// The currently selected member product.
         /// </summary>
         private Member selectedMember;
         /// <summary>
@@ -45,14 +45,14 @@ namespace lab5.ViewModel
             Messenger.Default.Register<NotificationMessage>(this, ReceiveMessage);
         }
         /// <summary>
-        /// The command that triggers adding a new member.
+        /// The command that triggers adding a new member product.
         /// </summary>
         public ICommand AddCommand { get; private set; }
         public ICommand ExitCommand { get; private set; }
         public ICommand ChangeCommand { get; private set; }
 
         /// <summary>
-        /// The currently selected member in the list box.
+        /// The currently selected product in the list box.
         /// </summary>
         public Member SelectedMember
         {
@@ -129,7 +129,7 @@ namespace lab5.ViewModel
             }
         }
         /// <summary>
-        /// The list of registered members.
+        /// The list of registered member products.
         /// </summary>
         public ObservableCollection<Member> MemberList
         {

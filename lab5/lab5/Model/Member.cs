@@ -8,27 +8,28 @@ using System.Threading.Tasks;
 namespace lab5.Model
 {
     /// <summary>
-    /// A class that represents a member of a gym.
+    /// A class that represents a product.
     /// </summary>
     public class Member : ObservableObject
     {
         /// <summary>
-        /// The member's first name.
+        /// The product's ID, Name and quantity.
         /// </summary>
         private string productId, productName;
         private int quantity;
         private const int TEXT_LIMIT = 10;
         
+      
         /// <summary>
-        /// The member's last name.
+        /// Member object Constructor
         /// </summary>
         public Member() { }
         /// <summary>
-        /// Creates a new member.
+        /// Overloaded Constructor for Member().
         /// </summary>
-        /// <param name="fName">The member's first name.</param>
-        /// <param name="lName">The member's last name.</param>
-        /// <param name="mail">The member's e-mail.</param>
+        /// <param name="pId">The product's ID.</param>
+        /// <param name="pName">The product's name.</param>
+        /// <param name="amount">The product's quantity.</param>
         public Member(string pId, string pName, int amount)
         {
             ProductId = pId;
@@ -37,8 +38,9 @@ namespace lab5.Model
         }
 
         /// <summary>
-        ///  A property that gets or sets the member's first name, and makes sure it's not too long.
+        ///  A property that gets or sets the product'd ID, and makes sure it's not too long.
         /// </summary>
+        /// <returns>The product's ID</returns>
         public string ProductId
         {
             get
@@ -68,9 +70,9 @@ namespace lab5.Model
         }
 
         /// <summary>
-        /// A property that gets or sets the member's last name, and makes sure it's not too long.
+        /// A property that gets or sets the product's  name, and makes sure it's not too long.
         /// </summary>
-        /// <returns>The member's last name.</returns>
+        /// <returns>The product's name.</returns>
         public string ProductName
         {
             get
@@ -91,9 +93,9 @@ namespace lab5.Model
             }
         }
          /// <summary>
-         /// A property that gets or sets the member's e-mail, and makes sure it's not too long.
+         /// A property that gets or sets the product's quantity and makes sure it's not too long.
          /// </summary>
-         /// <returns>The member's e-mail.</returns>
+         /// <returns>THe product's quantity</returns>
          public int Quantity
          {
             get
@@ -112,7 +114,7 @@ namespace lab5.Model
          /// <summary>
          /// Text to be displayed in the list box.
          /// </summary>
-         /// <returns>A concatenation of the member's first name, last name, and email.</returns>
+         /// <returns>A concatenation of the the product's ID, product's Name and product's quantity.</returns>
          public override string ToString()
          {
             return "ID: " + productId + ", " + "Name: " + productName + ", " + "Quantity: " + quantity;

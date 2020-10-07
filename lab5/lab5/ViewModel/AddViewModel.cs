@@ -10,20 +10,20 @@ using System.Windows.Input;
 namespace lab5.ViewModel
 {
     /// <summary>
-    /// The VM for adding users to the list.
+    /// The VM for adding products to the list.
     /// </summary>
     public class AddViewModel : ViewModelBase
     {
         /// <summary>
-        /// The currently entered first name in the add window.
+        /// The currently entered product ID in the add window.
         /// </summary>
         private string enteredPId;
         /// <summary>
-        /// The currently entered last name in the add window.
+        /// The currently entered product name in the add window.
         /// </summary>
         private string enteredPName;
         /// <summary>
-        /// The currently entered email in the add window.
+        /// The currently entered amount in the add window.
         /// </summary>
         private int enteredAmount;
         /// <summary>
@@ -52,7 +52,7 @@ namespace lab5.ViewModel
             {
                 if (window != null)
                 {
-                    Messenger.Default.Send<MessageMember>(new MessageMember(EnteredPId, EnteredPName, EnteredAmount, "Add"));//NOT SURE ABOUT THIS, WAS AN UNDERLINE
+                    Messenger.Default.Send<MessageMember>(new MessageMember(EnteredPId, EnteredPName, EnteredAmount, "Add"));
                     ClearFields();
                     window.Close();
                 }
@@ -83,7 +83,7 @@ namespace lab5.ViewModel
             }
         }
         /// <summary>
-        /// The currently entered first name in the add window.
+        /// The currently entered product ID in the add window.
         /// </summary>
         public string EnteredPId
         {
@@ -98,7 +98,7 @@ namespace lab5.ViewModel
             }
         }
         /// <summary>
-        /// The currently entered first name in the add window.
+        /// The currently entered product's name in the add window.
         /// </summary>
         public string EnteredPName
         {
@@ -113,7 +113,7 @@ namespace lab5.ViewModel
             }
         }
         /// <summary>
-        /// The currently entered first name in the add window.
+        /// The currently entered amount in the add window.
         /// </summary>
         public int EnteredAmount
         {

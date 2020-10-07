@@ -13,9 +13,9 @@ namespace lab5.Model
         /// <summary>
         /// Creates a new member.
         /// </summary>
-        /// <param name="fName">The member's first name.</param>
-        /// <param name="lName">The member's last name.</param>
-        /// <param name="mail">The member's e-mail.</param>
+        /// <param name="pId">The product's ID.</param>
+        /// <param name="pName">The product's name.</param>
+        /// <param name="amount">The product's quantity.</param>
         /// <param name="message">The extra description</param>
         public MessageMember(string pId, string pName, int amount, string message) :
             base(pId, pName, amount)

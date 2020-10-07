@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace lab5.Model
 {
     /// <summary>
-    /// A class that uses a text file to store information about the gym members longterm.
+    /// A class that uses a text file to store information about the product objects longterm.
     /// </summary>
     class MemberDB : ObservableObject
     {
