@@ -18,8 +18,8 @@ namespace lab5.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<MainViewModel>();
-            //____________________________________ IDK JUST COPYING WPF APPLICATION 1
-            Messenger.Default.Register<NotificationMessage>(this, NotifyUserMethod);
+            //____________________________________ 
+            Messenger.Default.Register<NotificationMessage>(this, NotifyUserMethod); //  IDK JUST COPYING WPF APPLICATION 1
         }
         /// <summary>
         /// A property that lets the main window connect with its View Model.

@@ -17,9 +17,9 @@ namespace lab5.Views
     /// <summary>
     /// Interaction logic for AppWindow.xaml
     /// </summary>
-    public partial class AppWindow : Window
+    public partial class AddWindow : Window
     {
-        public AppWindow()
+        public AddWindow()
         {
             InitializeComponent();
         }

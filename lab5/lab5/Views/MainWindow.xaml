@@ -6,8 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:lab5.ViewModel"
     xmlns:local="clr-namespace:lab5"
-    xmlns:i="clrnamespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-    mc:Ignorable="d"
+    xmlns:i="clrnamespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:scm1="clr-namespace:System.ComponentModel;assembly=WindowsBase" xmlns:i1="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource Locator}, Path=MainViewModel}"
     Title="Inventory Control System" Height="350" Width="525">
     <Grid Background="#FFECEAEA">
@@ -26,11 +26,11 @@
             HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Margin="0,0,0,50"/>
         <ListBox x:Name="listBox" ItemsSource="{Binding Source={StaticResource MemberList}}" SelectedItem="{Binding SelectedMember}" 
                  Grid.Row ="1" Grid.Column ="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="322">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="MouseUp">
-                    <i:InvokeCommandAction Command="{Binding ChangeMethod}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
+            <i1:Interaction.Triggers>
+                <i1:EventTrigger EventName="MouseUp">
+                    <i1:InvokeCommandAction Command="{Binding ChangeMethod}"/>
+                </i1:EventTrigger>
+            </i1:Interaction.Triggers>
         </ListBox>
         <Label x:Name="label" Content="Products:" Grid.Row ="0" Grid.Column ="0"
             HorizontalAlignment="Left" VerticalAlignment="Bottom"/>

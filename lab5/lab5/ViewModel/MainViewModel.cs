@@ -33,12 +33,12 @@ namespace lab5.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            members =
-            database =
+            members = new ObservableCollection<Member>();
+            database = new MemberDB(members);
             members = database.GetMemberships();
-            AddCommand =
-            ExitCommand =
-            ChangeCommand =
+            AddCommand = new RelayCommand(AddMethod);
+            ExitCommand = new RelayCommand<IClosable>(ExitMethod);
+            ChangeCommand = new RelayCommand(ChangeMethod);
             Messenger.Default.Register<MessageMember>(this, ReceiveMember);
             Messenger.Default.Register<NotificationMessage>(this, ReceiveMessage);
         }
@@ -46,6 +46,8 @@ namespace lab5.ViewModel
         /// The command that triggers adding a new member.
         /// </summary>
         public ICommand AddCommand { get; private set; }
+        public ICommand ExitCommand { get; private set; }
+        public ICommand ChangeCommand { get; private set; }
 
         /// <summary>
         /// The currently selected member in the list box.
@@ -90,7 +92,7 @@ namespace lab5.ViewModel
             {
                 ChangeWindow change = new ChangeWindow();
                 change.Show();
-                Messenger.Default.Send(__________________________);
+                Messenger.Default.Send<NotificationMessage>(new NotificationMessage("ChangeMethod MainViewModel.cs"));
             }
         }
         /// <summary>

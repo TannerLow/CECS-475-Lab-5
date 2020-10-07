@@ -74,7 +74,7 @@ namespace lab5.ViewModel
         {
             if (window != null)
             {
-                Messenger.Default.Send(______________________________________--));
+                Messenger.Default.Send<NotificationMessage>(new NotificationMessage("DeleteMethod ChangeViewModel.cs"));
                 window.Close();
             }
         }
