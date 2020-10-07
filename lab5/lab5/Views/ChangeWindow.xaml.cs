@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lab5.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace lab5.Views
     /// <summary>
     /// Interaction logic for ChangeWindow.xaml
     /// </summary>
-    public partial class ChangeWindow : Window
+    public partial class ChangeWindow : Window, IClosable
     {
         public ChangeWindow()
         {
